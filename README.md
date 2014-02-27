@@ -1,4 +1,6 @@
 eventiceland.github.io
 ======================
 
-Event Iceland: Photo Tours &amp; Workshops
+Photo Tours &amp; Workshops Website
+
+© 2014, Event Iceland, Inc. All Rights Reserved.
