@@ -5,7 +5,18 @@
   z-index: 2000;
   top: 0;
   left: 0;
-  height: 2px;
+  height: 3px;
+
+    /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  /* IE 5-7 */
+  filter: alpha(opacity=70);
+  /* Netscape */
+  -moz-opacity: 0.7;
+  /* Safari 1.x */
+  -khtml-opacity: 0.7;
+  /* Good browsers */
+  opacity: 0.7;
 
   -webkit-transition: width 1s;
   -moz-transition: width 1s;
