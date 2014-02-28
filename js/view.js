@@ -47,6 +47,9 @@ $("#view .sub-nav dd").click(function() {
 $("#view_package").hide();
 function showPack() {
 	var offset = $(currentImg).offset();
+	var offset2 = $("#message").offset();
+	var offset3 = $("#footer").offset();
+	var headerHeight = $("#header").height();
 	var width = $(currentImg).width();
 	var height = $(currentImg).height();
 	$("#view_package").show();
@@ -54,11 +57,11 @@ function showPack() {
 	$("#view_package").css("left", offset.left);
 	$("#view_package").css("width", width);
 	$("#view_package").css("height", height);
-	$("#view_package").animate({width: "100%", height: "100%", top: 0, left: 0}, {duration: 500, complete: function() {
+	$("#view_package").animate({width: "100%", height: offset3.top-headerHeight, top: offset2.top+10, left: 0}, {duration: 700, complete: function() {
 		$(window).trigger("resize");
-		$(this).css("height", "auto");
+		//$(this).css("height", "auto");
 	}})
-	.css("height", "auto");
+	$('body,html').animate({scrollTop: offset2.top}, 700);
 	$("#close_pack").click(function() {
 		currentImg = undefined;
 		$("#overlay").hide();
