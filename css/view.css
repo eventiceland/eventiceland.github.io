@@ -6,6 +6,7 @@
 	line-height: 1.5;
 	text-align: justify;
 	margin-bottom: 10px;
+	margin-top: -5px;
 }
 
 .pack-orbit {
@@ -17,7 +18,7 @@ ul.infobox {
 	margin: 0px;
 	color: #a3aaba;
 	float: left;
-	margin-right: 20px;
+	margin-right: 10px;
 	margin-bottom: 0px;
 	font-size: 0.9em;
 	background-color: rgba(17, 19, 22, 0.6);
