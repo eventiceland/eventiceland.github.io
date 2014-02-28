@@ -290,6 +290,7 @@ ul.infobox li span.value {
 	padding-bottom: 60px;
 	border-top: 10px solid #1a1d22;
 	border-bottom: 10px solid #1a1d22;
+	text-align: justify;
 }
 
 #footer {
@@ -305,4 +306,8 @@ ul.infobox li span.value {
 
 #footer #rights {
 	margin-top: 60px;
+}
+
+#footer .footer_block {
+	margin-bottom: 30px;
 }

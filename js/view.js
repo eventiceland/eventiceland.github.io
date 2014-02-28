@@ -5,7 +5,9 @@ $(window).scroll(function(e){
 function parallax(){
   var scrolled = $(window).scrollTop();
   $('#header').css('background-position','center ' + -(scrolled*0.2)+'px');
-  $('#header').css('opacity', 1-scrolled*(1/1000));
+  $("#header").stop();
+  $("#header").animate({"opacity": 1-scrolled*(1/1000)}, {duration: 100})
+  //$('#header').css('opacity', 1-scrolled*(1/1000));
 }
 
 $("#header").css("opacity", 0.0);
