@@ -1,21 +1,3 @@
-$(window).scroll(function(e){
-  parallax();
-});
-
-function parallax(){
-  var scrolled = $(window).scrollTop();
-  if (scrolled < $("#message").position().top) {
-  	  console.log("sdfds")
-	  $('#header').css('background-position','center ' + -(scrolled*0.2)+'px');
-	  //$("#header").stop();
-	  //$("#header").animate({"opacity": 1-scrolled*(1/1000)}, {duration: 100})
-	  $('#header').css('opacity', 1-scrolled*(1/1000));
-  }
-}
-
-$("#header").css("opacity", 0.0);
-$("#header").delay(1000).animate({"opacity": 1.0}, {duration: 600});
-
 $("#book").click(function() {
 	$("#booking_form").slideDown("fast");
 })

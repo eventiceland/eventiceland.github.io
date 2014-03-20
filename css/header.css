@@ -1,0 +1,42 @@
+#colorfade {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	z-index: -1;
+	-webkit-transform: translateZ(0);
+}
+
+#header {
+	background: url(/img/header1-2.jpg);
+	height: 1000px;
+	-webkit-transform: translateZ(0);
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
+	opacity: 1;
+	background-position: 50% 0%;
+	background-repeat: no-repeat no-repeat;
+}
+
+#text_overlay .column {
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 660px;
+}
+
+#text_overlay .column h1 {
+	color: #ffffff !important;
+	font-weight: bold;
+	font-size: 5em !important;
+	font-family: 'Lato', sans-serif;
+}
+
+#text_overlay .column h2 {
+	color: #ffffff !important;
+	font-size: 3.5em !important;
+	font-family: 'Lato', sans-serif;
+}
+
+#message h1 {
+	color: #FFFFFF;
+}
