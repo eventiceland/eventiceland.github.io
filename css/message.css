@@ -1,0 +1,10 @@
+#message {
+	background-color: #1f2228;
+	/*min-height: 462px;*/
+	color: #ffffff;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	border-top: 10px solid #1a1d22;
+	border-bottom: 10px solid #1a1d22;
+	text-align: justify;
+}

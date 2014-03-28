@@ -5,6 +5,7 @@
 <!--bower-->
 <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/foundation/foundation.js"></script>
 <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.0.2/js/foundation/foundation.orbit.js"></script>
+
 <script src="/bower_components/jquery-nicescroll/jquery.nicescroll.min.js"></script>
 <script src="/bower_components/pace/pace.min.js"></script>
 <!--endbower-->
@@ -16,18 +17,21 @@
 <script src="/js/view.js"></script>
 <!-- endbuild -->
 
-    <script>
-    $(document).ready(function() {
-        $(document).foundation({
-            orbit: {
-                animation: 'slide',
-                timer_speed: 10000,
-                pause_on_hover: false,
-                animation_speed: 500,
-                navigation_arrows: true,
-                bullets: false,
-                next_on_click: true
-            }
-        });
+<script>
+$(document).ready(function() {
+    $(document).foundation({
+        orbit: {
+            animation: 'slide',
+            timer_speed: 10000,
+            timer: false,
+            circular: true,
+            pause_on_hover: true,
+            resume_on_mouseout: false,
+            animation_speed: 500,
+            navigation_arrows: true,
+            bullets: false,
+            next_on_click: true
+        }
     });
-    </script>
+});
+</script>

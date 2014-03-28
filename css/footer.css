@@ -1,0 +1,18 @@
+#footer {
+	background-color: #1f2228;
+	min-height: 462px;
+	color: #ffffff;
+	padding-top: 60px;
+}
+
+#footer #connect i {
+	margin: 5px;
+}
+
+#footer #rights {
+	margin-top: 60px;
+}
+
+#footer .footer_block {
+	margin-bottom: 30px;
+}
