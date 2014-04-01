@@ -1,15 +1,25 @@
 #colorfade {
 	position: relative;
 	top: 0px;
+	height: calc(100% - 140px);
+	min-height: 700px;
 	width: 100%;
 	z-index: -1;
 	-webkit-transform: translateZ(0);
 	background-color: #000000;
 }
 
-#header {
-	background: url(/img/header1-2.jpg);
-	height: 900px;
+.hitem0 { background: url(/img/header/large-0.jpg); }
+.hitem1 { background: url(/img/header/large-1.jpg); }
+.hitem2 { background: url(/img/header/large-2.jpg); }
+.hitem3 { background: url(/img/header/large-3.jpg); }
+.hitem4 { background: url(/img/header/large-4.jpg); }
+
+#header, #header_inner {
+	height: 100%;
+}
+
+.hcover {
 	-webkit-transform: translateZ(0);
 	background-attachment: fixed;
 	-webkit-background-size: cover;
@@ -19,25 +29,27 @@
 	background-repeat: no-repeat no-repeat;
 }
 
+#text_overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
 #text_overlay .column {
-	text-align: center;
-	margin-top: 80px;
-	margin-bottom: 660px;
-	position: relative;
-	top: 180px;
+	text-align: left;
 	text-shadow: 0px 0px 13px rgba(150, 150, 150, 0.8);
 }
 
 #text_overlay .column h1 {
 	color: #ffffff !important;
 	font-weight: bold;
-	font-size: 5em !important;
+	font-size: 4em !important;
 	font-family: 'Lato', sans-serif;
 }
 
 #text_overlay .column h2 {
 	color: #ffffff !important;
-	font-size: 3.5em !important;
+	font-size: 2.5em !important;
 	font-family: 'Lato', sans-serif;
 	top: -30px;
 	position: relative;
@@ -45,4 +57,32 @@
 
 #message h1 {
 	color: #FFFFFF;
+}
+
+
+#owl-demo {
+	clear: left;
+	background-color: #1A1D22;
+	padding-top: 10px;
+}
+#owl-demo .owl-item {
+	height: 120px;
+}
+
+#owl-demo .item0 { background: url(/img/header/thumb-0.jpg); }
+#owl-demo .item1 { background: url(/img/header/thumb-1.jpg); }
+#owl-demo .item2 { background: url(/img/header/thumb-2.jpg); }
+#owl-demo .item3 { background: url(/img/header/thumb-3.jpg); }
+#owl-demo .item4 { background: url(/img/header/thumb-4.jpg); }
+
+#owl-demo .item{
+	height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    opacity: 0.6;
+}
+
+#owl-demo .item.active {
+	opacity: 1;
 }
