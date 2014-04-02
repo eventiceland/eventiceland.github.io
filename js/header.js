@@ -88,7 +88,7 @@ $(document).ready(function() {
 					if (next) {
 						setImg($(this));
 					}
-					if ($(this).offset().left == 0) {
+					if ($(this).offset().left == 10) {
 						next = true;
 					} else {
 						next = false;

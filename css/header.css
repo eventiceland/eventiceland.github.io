@@ -64,6 +64,8 @@
 	clear: left;
 	background-color: #1A1D22;
 	padding-top: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 #owl-demo .owl-item {
 	height: 120px;
@@ -87,11 +89,11 @@
 }
 
 #owl-demo .first{
-    margin-left: 5px;
+
 }
 
 #owl-demo .last{
-    margin-right: 5px;
+
 }
 
 #owl-demo .item.active {
