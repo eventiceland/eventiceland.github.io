@@ -76,11 +76,22 @@
 #owl-demo .item4 { background: url(/img/header/thumb-4.jpg); }
 
 #owl-demo .item{
+	cursor: pointer;
 	height: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
     opacity: 0.6;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+#owl-demo .first{
+    margin-left: 5px;
+}
+
+#owl-demo .last{
+    margin-right: 5px;
 }
 
 #owl-demo .item.active {

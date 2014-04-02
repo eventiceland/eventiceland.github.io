@@ -75,6 +75,7 @@ $(document).ready(function() {
 	var change = true;
 	//$("#owl-example").owlCarousel();
 	$("#owl-demo").owlCarousel({
+		items: 7,
 		autoPlay: 3000,
 		navigation: false,
 		pagination: false,
