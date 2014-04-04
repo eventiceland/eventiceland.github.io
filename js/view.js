@@ -80,8 +80,8 @@ function setOverlay(img) {
 
 	$("#overlay").finish();
 	$("#overlay_icon").finish();
-	$("#overlay").fadeIn("fast")
-	$("#overlay_icon").fadeIn("fast").delay(1000);
+	$("#overlay").fadeIn("fast");
+	$("#overlay_icon").fadeIn("fast");
 
 	$("#overlay").css("height", height+"px");
 	$("#overlay").css("width", width+"px");

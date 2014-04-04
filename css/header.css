@@ -15,8 +15,12 @@
 .hitem3 { background: url(/img/header/large-3.jpg); }
 .hitem4 { background: url(/img/header/large-4.jpg); }
 
-#header, #header_inner {
+#header1, #header2 {
+	position: absolute;
+	top: 0;
+	left: 0;
 	height: 100%;
+	width: 100%;
 }
 
 .hcover {

@@ -1,3 +1,5 @@
+var speed = 4500;
+
 // shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame       ||
@@ -25,20 +27,21 @@ function parallax(){
   var scrolled = $(document).scrollTop();
   var mpos = $("#message").position().top;
   if (scrolled < mpos) {
+  		if (fade != undefined) fade.stop();
   		//console.log("innnnnn3")
   		var bp = Math.round(-(scrolled*0.25));
   		//console.log(bp)
   		var opacity = parseFloat(1-scrolled*(1/1000)).toFixed(3);
   		//console.log(opacity)
   		//$("#colorfade").css("top", -bp + "px");
-		$('#header').css('background-position','center ' + bp + "px" );
-		$('#header_inner').css('background-position','center ' + bp + "px" );
-		if (current == "header_inner") {
-			$('#header').css('opacity', 1.0);
-			$('#header_inner').css('opacity', opacity);
-		} else if (current == "header") {
-			$('#header').css('opacity', opacity);
-			//$('#header_inner').css('opacity', opacity);
+		$('#header1').css('background-position','center ' + bp + "px" );
+		$('#header2').css('background-position','center ' + bp + "px" );
+		if (current == "header2") {
+			//$('#header1').css('opacity', 1.0);
+			$('#header2').css('opacity', opacity);
+		} else if (current == "header1") {
+			$('#header1').css('opacity', opacity);
+			//$('#header2').css('opacity', opacity);
 		}
   }
   ticking = false;
@@ -71,47 +74,89 @@ function parallax(){
 
 //Carousel
 var owl;
+var change = true;
 $(document).ready(function() {
-	var change = true;
 	//$("#owl-example").owlCarousel();
 	$("#owl-demo").owlCarousel({
-		items: 7,
-		autoPlay: 3000,
+		items: 5,
+		autoPlay: false, //3000
 		navigation: false,
 		pagination: false,
 		itemsScaleUp: true,
 		stopOnHover: false,
-		afterMove: function(elem, t) {
+		afterMove: function(elem) {
 			var next = false;
 			if (change) {
 				$('#owl-demo .item').each(function() {
 					if (next) {
 						setImg($(this));
 					}
-					if ($(this).offset().left == 10) {
+					if ($(this).offset().left < 20 && $(this).offset().left > 0) {
 						next = true;
 					} else {
 						next = false;
 					}
 				})
 			}
+		},
+		startDragging: function(elem) {
+			change = false;
+			doOwl = false;
 		}
 	});
 	owl = $("#owl-demo").data('owlCarousel');
 	$('#owl-demo .item').on('click', function(event){
 		change = false;
-		owl.stop();
+		doOwl = false;
 		setImg($(this));
 	});
 });
 
-var current = "header_inner";
-var select = "header";
+function owlPlay() {
+	if (doOwl) {
+		var last = $($('#owl-demo .item')[$('#owl-demo .item').length-1]);		if (last.hasClass("active")) {
+			change = false;
+			owl.next()
+			setImg($($('#owl-demo .item')[0]));
+			change = true;
+		} else if (window.innerWidth > last.offset().left+20) {
+			var next = false;
+			var more = true;
+			if (change) {
+				$('#owl-demo .item').each(function() {
+					if (more) {
+						if ($(this).hasClass("active")) {
+							next = true;
+						} else if (next) {
+							more = false;
+							setImg($(this));
+						} else {
+							next = false;
+						}
+					}
+
+				})
+			}
+			more = true;
+		} else {
+			owl.next();
+		}
+	}
+}
+
+var doOwl = true;
+var headerInterval = setInterval(owlPlay, speed)
+
+var current = "header1";
+var select = "header2";
+var fade;
+parallax()
+$("#"+select).fadeTo(0 , 0.0);
 function setImg(that) {
-	if (current == "header_inner") {
-		select = "header";
+	if (current == "header2") {
+		select = "header1";
 	} else {
-		select = "header_inner";
+		select = "header2";
 	}
 
 	$('#owl-demo .item').removeClass("active");
@@ -132,19 +177,17 @@ function setImg(that) {
 	}
 	$("#"+select).addClass("hcover");
 
-	if (select == "header_inner") {
-		$("#header_inner").fadeTo( "normal" , 1.0, function() {
-			$("#header").removeClass("hitem0");
-			$("#header").removeClass("hitem1");
-			$("#header").removeClass("hitem2");
-			$("#header").removeClass("hitem3");
-			$("#header").removeClass("hitem4");
-			$("#header").removeClass("hcover");
-		});
-		current = "header_inner";
-	} else if (select == "header") {
-		$("#header_inner").fadeTo( "normal" , 0.0);
-		current = "header";
+	var scrolled = $(document).scrollTop();
+	var opacity = parseFloat(1-scrolled*(1/1000)).toFixed(3);
+	//opacity = 1.0
+	if (select == "header2") {
+		$("#header1").fadeTo("normal" , 0.0);
+		fade = $("#header2").fadeTo("normal" , opacity);
+		current = "header2";
+	} else if (select == "header1") {
+		fade = $("#header1").fadeTo("normal" , opacity);
+		$("#header2").fadeTo("normal" , 0.0);
+		current = "header1";
 	}
 }
 
