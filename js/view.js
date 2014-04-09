@@ -36,9 +36,10 @@ function showPack() {
 	var offset = $(currentImg).offset();
 	var offset2 = $("#message").offset();
 	var offset3 = $("#footer").offset();
-	var headerHeight = $("#header").height();
+	var headerHeight = $("#colorfade").height()+$("#owl-demo").height();
 	var width = $(currentImg).width();
 	var height = $(currentImg).height();
+	console.log(offset3.top-headerHeight)
 	$("#view_package").show();
 	$("#view_package").css("top", offset.top);
 	$("#view_package").css("left", offset.left);
@@ -46,8 +47,13 @@ function showPack() {
 	$("#view_package").css("height", height);
 	$("#view_package").animate({width: "100%", height: offset3.top-headerHeight, top: offset2.top+10, left: 0}, {duration: 700, complete: function() {
 		$(window).trigger("resize");
-		//$(this).css("height", "auto");
-	}})
+		$(this).css("height", "auto");
+		console.log("heressss")
+		$(this).css("min-height", $("#content").outerHeight()+"px");
+		var margin = Math.abs($(this).outerHeight()-$("#content").outerHeight());
+		$("#footer").css("margin-top", margin+"px");
+		//$("#view").css("height", $(this).height()-$("#message").height());
+	}});
 	$('body,html').animate({scrollTop: offset2.top}, 700);
 	$("#close_pack").click(function() {
 		currentImg = undefined;
@@ -57,6 +63,7 @@ function showPack() {
 			$("#view_package").css("width", "0px");
 			$("#view_package").css("height", "0px");
 		});
+		$("#footer").css("margin-top", "0px");
 		//$("#view_package").animate({width: "0%", height: "0%", top: window.innerHeight/2, left: window.innerWidth/2}, {duration: 500})
 	});
 }

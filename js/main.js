@@ -42,15 +42,19 @@ var scrollPos;
             document.body.className = evtMap[evt.type];
         } else {
             if (this[hidden] ? "hidden" : "visible" == "hidden") {
+                console.log("here1")
             	window.clearInterval(headerInterval);
             	scrollPos = $(document).scrollTop();
             } else if (this[hidden] ? "hidden" : "visible" == "visible" && change == true) {
+                console.log("here2")
             	headerInterval = setInterval(owlPlay, speed);
-            	$(document).scrollTop(scrollPos);
+            	//$(document).scrollTop(scrollPos);
             	scroll = true;
             }
             document.body.className = this[hidden] ? "hidden" : "visible";
-        }       
-        if (scroll) $(document).scrollTop(scrollPos);
+        }
+        if (scroll) {
+            $(document).scrollTop(scrollPos);
+        }
     }
 })();

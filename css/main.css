@@ -106,16 +106,43 @@ textarea {
 body {
     font-family: 'Open Sans', sans-serif !important;
     line-height: 1.5 !important;
-
+    background-color: #DADADA !important;
 }
 
+.top-bar {
+    background-color: rgba(207, 207, 207, 1) !important;
+}
 
+.top-bar-section ul {
+    background-color: rgba(207, 207, 207, 1) !important;
+}
 
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background-color: rgba(207, 207, 207, 1) !important;
+    color: #000000;
+}
 
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+    background-color: #c0c0c0 !important;
+}
 
+.top-bar-section li.active:not(.has-form) a:not(.button) {
+    background-color: #c0c0c0 !important;
+    color: #000000 !important;  
+}
 
+#nav {
+    background-color: rgba(207, 207, 207, 1) !important;
+    border-bottom: 1px solid #222;
+}
 
+#nav li a {
+    border-right: 1px solid #222;
+}
 
+#nav li.first a {
+    border-left: 1px solid #222;
+}
 
 
 
