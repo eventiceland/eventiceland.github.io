@@ -133,15 +133,15 @@ body {
 
 #nav {
     background-color: rgba(207, 207, 207, 1) !important;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #909090;
 }
 
-#nav li a {
-    border-right: 1px solid #222;
+#nav li {
+    border-right: 1px solid #909090;
 }
 
-#nav li.first a {
-    border-left: 1px solid #222;
+#nav li.first {
+    border-left: 1px solid #909090;
 }
 
 

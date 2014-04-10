@@ -32,10 +32,27 @@ ul.infobox li {
 ul.infobox li span.key {
 	margin-right: 20px;
 	color: #FFFFFF;
+	float: left;
 }
 
 ul.infobox li span.value {
-	float: right;
+	display: block;
+	width: 100%;
+	text-align: right;
+	font-size: 0.9em;
+	margin-top: 2px;
+}
+
+ul.infobox li ul.value_list {
+	font-size: 0.9em;
+	text-align: right;
+	margin-top: 2px;
+}
+
+ul.infobox li ul.value_list li {
+	border-bottom: 0px;
+	padding: 0;
+	margin-bottom: 10px;
 }
 
 #view_package div.orbit-container div.orbit-caption {
@@ -229,6 +246,7 @@ ul.infobox li span.value {
 	-webkit-box-shadow: 0 10px 15px -12px #6f6f6f;
 	box-shadow: 0 10px 15px -12px #6f6f6f;
 	border: 1px solid #222;
+	position: relative;
 }
 
 #view #overlay {
@@ -286,9 +304,15 @@ ul.infobox li span.value {
 	padding: 8px;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	min-height: 86px;
 }
 
 #view #cards .tw_length_nd_price {
 	margin-top: 10px;
 	color: #383838;
+	position: absolute; bottom: 10px;
+}
+
+.typeform-share {
+	margin-top: 10px !important;
 }
