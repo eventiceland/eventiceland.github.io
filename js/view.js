@@ -86,7 +86,8 @@ $("#overlay").hide();
 $("#overlay_icon").hide();
 var pack;
 function setOverlay(img) {
-	pack = img.className.split(/\s+/)[1];
+	//pack = img.className.split(/\s+/)[1];
+	pack = "p3";
 	var offset = $(img).offset();
 	var height = $(img).height();
 	var width = $(img).width();
