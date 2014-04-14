@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	//$("html").niceScroll();
+    $(window).trigger("resize");
 });
 
 var scrollPos;
