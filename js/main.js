@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	//$("html").niceScroll();
-    setTimeout(function() { $(window).trigger("resize"); }, 3000)
+    setTimeout(function() { $(window).trigger("resize"); }, 1500)
 });
 
 var scrollPos;
