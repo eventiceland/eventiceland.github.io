@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	//$("html").niceScroll();
-    $(window).trigger("resize");
+    setTimeout(function() { $(window).trigger("resize"); }, 3000)
 });
 
 var scrollPos;
@@ -54,7 +54,6 @@ var scrollPos;
             }
             document.body.className = this[hidden] ? "hidden" : "visible";
         }
-        console.log(scrollPos);
         if (scroll) {
             $(document).scrollTop(scrollPos);
         }
