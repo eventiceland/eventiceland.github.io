@@ -1,8 +1,26 @@
+#view_package div.pack {
+	display: none;
+}
+
 .content {
 	line-height: 1.5;
-	text-align: justify;
 	margin-bottom: 10px;
-	margin-top: -5px;
+	margin-top: 55px;
+	float: none !important;
+}
+
+.tabs:after {
+	clear: none !important;
+}
+
+.tabs dd.active a {
+	background: none repeat scroll 0% 0% #090a0b !important;
+}
+
+.tabs dd > a {
+	background: none repeat scroll 0% 0% #111316 !important;
+	color: #FFFFFF !important;
+	opacity: 0.6;
 }
 
 .pack-orbit {
@@ -13,20 +31,22 @@ ul.infobox {
 	padding: 10px;
 	margin: 0px;
 	color: #a3aaba;
-	float: left;
-	margin-right: 10px;
+	margin-left: 10px;
 	margin-bottom: 0px;
 	font-size: 0.9em;
 	background-color: rgba(17, 19, 22, 0.6);
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
+	max-width: 250px;
+	float: right;
 }
 
 ul.infobox li {
 	display: block;
 	padding: 10px 0;
 	border-bottom: 1px solid #2d313b;
+	overflow: auto;
 }
 
 ul.infobox li span.key {
@@ -37,7 +57,6 @@ ul.infobox li span.key {
 
 ul.infobox li span.value {
 	display: block;
-	width: 100%;
 	text-align: right;
 	font-size: 0.9em;
 	margin-top: 2px;
@@ -45,8 +64,8 @@ ul.infobox li span.value {
 
 ul.infobox li ul.value_list {
 	font-size: 0.9em;
-	text-align: right;
-	margin-top: 2px;
+	text-align: left;
+	margin-top: 32px;
 }
 
 ul.infobox li ul.value_list li {
@@ -113,9 +132,9 @@ ul.infobox li ul.value_list li {
 	position: absolute;
 	top: 30px;
 	right: 30px;
-	opacity:0.3;
-	cursor:pointer;
-	display:block;
+	opacity: 0.3;
+	cursor: pointer;
+	display: block;
 	height: 45px;
 	width: 45px;
 	border-radius:50%;

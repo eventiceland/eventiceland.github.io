@@ -53,6 +53,7 @@ var scrollPos;
             }
             document.body.className = this[hidden] ? "hidden" : "visible";
         }
+        console.log(scrollPos);
         if (scroll) {
             $(document).scrollTop(scrollPos);
         }

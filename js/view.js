@@ -39,16 +39,16 @@ function showPack() {
 	var headerHeight = $("#colorfade").height()+$("#owl-demo").height();
 	var width = $(currentImg).width();
 	var height = $(currentImg).height();
-	console.log(offset3.top-headerHeight)
 	$("#view_package").show();
 	$("#view_package").css("top", offset.top);
 	$("#view_package").css("left", offset.left);
 	$("#view_package").css("width", width);
 	$("#view_package").css("height", height);
 	$("#view_package").animate({width: "100%", height: offset3.top-headerHeight, top: offset2.top+10, left: 0}, {duration: 700, complete: function() {
+		$("#overlay").hide();
+		$("#overlay_icon").hide();
 		$(window).trigger("resize");
 		$(this).css("height", "auto");
-		console.log("heressss")
 		$(this).css("min-height", $("#content").outerHeight()+"px");
 		var margin = Math.abs($(this).outerHeight()-$("#content").outerHeight());
 		$("#footer").css("margin-top", margin+"px");
@@ -57,20 +57,24 @@ function showPack() {
 	$('body,html').animate({scrollTop: offset2.top}, 700);
 	$("#close_pack").click(function() {
 		currentImg = undefined;
-		$("#overlay").hide();
-		$("#overlay_icon").hide();
 		$("#view_package").fadeOut("slow", function() {
+			$("#view_package").css("min-height", "0px")
 			$("#view_package").css("width", "0px");
 			$("#view_package").css("height", "0px");
+			$("#view_package").hide();
 		});
 		$("#footer").css("margin-top", "0px");
 		//$("#view_package").animate({width: "0%", height: "0%", top: window.innerHeight/2, left: window.innerWidth/2}, {duration: 500})
 	});
 }
 $("#overlay").click(function() {
+	$("#view_package .pack").hide();
+	$("#view_package ."+pack).show();
 	showPack();
 })
 $("#overlay_icon").click(function() {
+	$("#view_package .pack").hide();
+	$("#view_package ."+pack).show();
 	showPack();
 })
 
@@ -80,7 +84,9 @@ $("#overlay").show();
 $("#overlay_icon").show();
 $("#overlay").hide();
 $("#overlay_icon").hide();
+var pack;
 function setOverlay(img) {
+	pack = img.className.split(/\s+/)[1];
 	var offset = $(img).offset();
 	var height = $(img).height();
 	var width = $(img).width();
@@ -94,8 +100,8 @@ function setOverlay(img) {
 	$("#overlay").css("width", width+"px");
 	$("#overlay").offset({ top: offset.top, left: offset.left})
 	$("#overlay_icon").offset({ top: offset.top+height/2-66/2, left: offset.left+width/2-55/2})
-
 }
+
 var currentImg;
 //var outing = false;
 $("#view #cards img").mouseover(function() {
