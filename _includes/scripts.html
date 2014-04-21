@@ -7,7 +7,6 @@
 <script type='text/javascript' src="/bower_components/foundation/js/foundation/foundation.orbit.js"></script>
 <script type='text/javascript' src="/bower_components/foundation/js/foundation/foundation.equalizer.js"></script>
 
-<script src="/bower_components/jquery-nicescroll/jquery.nicescroll.min.js"></script>
 <script src="/bower_components/pace/pace.min.js"></script>
 <script src="/bower_components/owlcarousel/owl-carousel/owl.carousel.min.js"></script>
 <!--endbower-->
@@ -38,5 +37,17 @@ $(document).ready(function() {
     $(window).load(function() {
         $(document).foundation();
     })
+    function headerSize() {
+
+        $("#text_overlay h1").css("font-size", $(window).width()/15+"px");
+        $("#text_overlay h2").css("font-size", $(window).width()/37+"px");
+        $("#text_overlay h2").css("padding-top", $(window).width()/13+"px");
+
+        console.log($(window).width()/13)
+    }
+    headerSize()
+    $(window).on("resize", function() {
+        headerSize()
+    });
 });
 </script>
