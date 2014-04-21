@@ -61,7 +61,6 @@ function showPack() {
 			$("#view_package").css("min-height", "0px")
 			$("#view_package").css("width", "0px");
 			$("#view_package").css("height", "0px");
-			$("#view_package").hide();
 		});
 		$("#footer").css("margin-top", "0px");
 		//$("#view_package").animate({width: "0%", height: "0%", top: window.innerHeight/2, left: window.innerWidth/2}, {duration: 500})
