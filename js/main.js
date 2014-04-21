@@ -1,6 +1,13 @@
 $(document).ready(function() {
 	//$("html").niceScroll();
+    setTimeout(function() { $(window).trigger("resize"); }, 500)
+    setTimeout(function() { $(window).trigger("resize"); }, 1000)
     setTimeout(function() { $(window).trigger("resize"); }, 1500)
+    setTimeout(function() { $(window).trigger("resize"); }, 2000)
+    setTimeout(function() { $(window).trigger("resize"); }, 2500)
+    setTimeout(function() { $(window).trigger("resize"); }, 3000)
+    setTimeout(function() { $(window).trigger("resize"); }, 3500)
+    setTimeout(function() { $(window).trigger("resize"); }, 4000)
 });
 
 var scrollPos;
