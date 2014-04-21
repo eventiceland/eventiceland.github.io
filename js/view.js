@@ -77,6 +77,13 @@ $("#overlay_icon").click(function() {
 	showPack();
 })
 
+$("#view_package .tabs dd a").click(function() {
+	setTimeout(function() {
+		var margin = Math.abs($("#view_package").outerHeight()-$("#content").outerHeight());
+		$("#footer").css("margin-top", margin+"px");
+	}, 10);
+})
+
 //Overlay Code//
 //Hack: fixes a problem where the first hover doesn't cause a "fade in" but a "show"
 $("#overlay").show();

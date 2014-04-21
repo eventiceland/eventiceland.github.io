@@ -91,7 +91,7 @@ $(document).ready(function() {
 					if (next) {
 						setImg($(this));
 					}
-					if ($(this).offset().left < 20 && $(this).offset().left > 0) {
+					if ($(this).offset().left < 20 && $(this).offset().left > -10) {
 						next = true;
 					} else {
 						next = false;
@@ -113,13 +113,18 @@ $(document).ready(function() {
 });
 
 function owlPlay() {
+	console.log("play1")
 	if (doOwl) {
-		var last = $($('#owl-demo .item')[$('#owl-demo .item').length-1]);		if (last.hasClass("active")) {
+		console.log("play2")
+		var last = $($('#owl-demo .item')[$('#owl-demo .item').length-1]);
+		if (last.hasClass("active")) {
+			console.log("active");
 			change = false;
 			owl.next()
 			setImg($($('#owl-demo .item')[0]));
 			change = true;
 		} else if (window.innerWidth > last.offset().left+20) {
+			console.log("active2");
 			var next = false;
 			var more = true;
 			if (change) {
@@ -139,6 +144,7 @@ function owlPlay() {
 			}
 			more = true;
 		} else {
+			console.log("active3")
 			owl.next();
 		}
 	}
@@ -153,6 +159,7 @@ var fade;
 parallax()
 $("#"+select).fadeTo(0 , 0.0);
 function setImg(that) {
+	console.log("img")
 	if (current == "header2") {
 		select = "header1";
 	} else {
@@ -178,7 +185,8 @@ function setImg(that) {
 	$("#"+select).addClass("hcover");
 
 	var scrolled = $(document).scrollTop();
-	var opacity = parseFloat(1-scrolled*(1/1000)).toFixed(3);
+	var mpos = $("#message").position().top;
+	var opacity = parseFloat(1-scrolled*(1/mpos)).toFixed(3);
 	//opacity = 1.0
 	if (select == "header2") {
 		$("#header1").fadeTo("normal" , 0.0);

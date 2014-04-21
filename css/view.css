@@ -336,3 +336,7 @@ ul.infobox li ul.value_list li {
 .typeform-share {
 	/*margin-top: 10px !important;*/
 }
+
+#view_package label {
+	color: #FFFFFF;
+}
