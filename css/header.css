@@ -1,7 +1,7 @@
 #colorfade {
 	position: relative;
 	top: 0px;
-	height: calc(100% - 140px);
+	height: calc(100% - 120px);
 	min-height: 700px;
 	width: 100%;
 	z-index: -1;
@@ -66,10 +66,10 @@
 
 #owl-demo {
 	clear: left;
-	background-color: #1A1D22;
-	padding-top: 10px;
-	padding-left: 5px;
-	padding-right: 5px;
+	background-color: #1f2228;
+	padding-top: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 #owl-demo .owl-item {
 	height: 120px;
@@ -88,8 +88,8 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
     opacity: 0.6;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 #owl-demo .first{

@@ -9,15 +9,19 @@
 	float: none !important;
 }
 
-.tabs:after {
+#view_package .tabs:after {
 	clear: none !important;
 }
 
-.tabs dd.active a {
+#view_package .tabs dd.book {
+	background-color: #008CBA;
+}
+
+#view_package .tabs dd.active a {
 	background: none repeat scroll 0% 0% #090a0b !important;
 }
 
-.tabs dd > a {
+#view_package .tabs dd > a {
 	background: none repeat scroll 0% 0% #111316 !important;
 	color: #FFFFFF !important;
 	opacity: 0.6;
@@ -31,14 +35,13 @@ ul.infobox {
 	padding: 10px;
 	margin: 0px;
 	color: #a3aaba;
-	margin-left: 10px;
+	margin-left: 0px;
 	margin-bottom: 0px;
 	font-size: 0.9em;
 	background-color: rgba(17, 19, 22, 0.6);
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	max-width: 250px;
 	float: right;
 }
 
@@ -170,8 +173,6 @@ ul.infobox li ul.value_list li {
 }
 
 #view {
-	padding-top: 60px;
-	padding-bottom: 60px;
 	color: #1f2228 !important;
 	background-color: #DADADA; /* or #FFFFFF */
 }
@@ -333,5 +334,5 @@ ul.infobox li ul.value_list li {
 }
 
 .typeform-share {
-	margin-top: 10px !important;
+	/*margin-top: 10px !important;*/
 }
