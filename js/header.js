@@ -31,7 +31,7 @@ function parallax(){
   		//console.log("innnnnn3")
   		var bp = Math.round(-(scrolled*0.25));
   		//console.log(bp)
-  		var opacity = parseFloat(1-scrolled*(1/1000)).toFixed(3);
+  		var opacity = parseFloat(1-scrolled*(1/mpos)).toFixed(3);
   		//console.log(opacity)
   		//$("#colorfade").css("top", -bp + "px");
 		$('#header1').css('background-position','center ' + bp + "px" );

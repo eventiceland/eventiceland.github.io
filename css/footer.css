@@ -16,3 +16,22 @@
 #footer .footer_block {
 	margin-bottom: 30px;
 }
+
+#footer .fa {
+	color: #CCCCCC;
+}
+
+#footer .fa:hover {
+	color: white;
+	cursor: pointer;
+}
+
+#footer h2, #footer h5 {
+	color: #FFFFFF;
+	position: relative;
+	top: -15px;
+}
+
+#footer h5 {
+	top: -27px;
+}
