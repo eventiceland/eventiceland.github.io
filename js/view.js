@@ -44,7 +44,7 @@ function showPack() {
 	$("#view_package").css("left", offset.left);
 	$("#view_package").css("width", width);
 	$("#view_package").css("height", height);
-	$("#view_package").animate({width: "100%", height: offset3.top-headerHeight, top: offset2.top+10, left: 0}, {duration: 700, complete: function() {
+	$("#view_package").animate({width: "100%", height: offset3.top-headerHeight, top: offset2.top, left: 0}, {duration: 700, complete: function() {
 		hideOverlay(true)
 		$(window).trigger("resize");
 		$(this).css("height", "auto");
@@ -138,15 +138,20 @@ $("#overlay_icon").hover(function() {
 })
 
 function setFooterMargin() {
+	var offset = $("#message").offset();
+	$("#view_package").css("top", offset.top);
 	if ($("#view_package").is(":visible")) {
 		setTimeout(function() {
+			var minus = Math.abs($("#view_package").offset().top-$("#content").offset.top);
 			var margin = Math.abs($("#view_package").outerHeight()-$("#content").outerHeight());
-			$("#footer").css("margin-top", margin+"px");
-		}, 10);
+			console.log(margin)
+			$("#footer").css("margin-top", margin-1+"px");
+		}, 200);
 	}
 }
 
 $(window).resize(function() {
+	console.log("resize")
 	if (currentImg != undefined) {
 		setOverlay(currentImg);
 	}

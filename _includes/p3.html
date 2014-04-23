@@ -131,10 +131,10 @@
         <div class="column small-12 medium-8 large-9">
             <div class="fix1">
                 <dl class="tabs" data-tab>
-                    <dd class="active"><a href="#p3_panel2-1">Details</a></dd>
-                    <dd><a href="#p3_panel2-2">About Guide</a></dd>
-                    <dd><a href="#p3_panel2-3">Need More Info?</a></dd>
-                    <dd class="book"><a class="typeform-share" href="https://eventiceland.typeform.com/to/FqrpEd" data-mode="2" target="_blank" class="">Book Workshop</a></dd>
+                    <dd class="active"><a href="#p3_panel2-1" onclick="$('#p3book').show();">Details</a></dd>
+                    <dd><a href="#p3_panel2-2" onclick="$('#p3book').show();">About Guide</a></dd>
+                    <dd><a href="#p3_panel2-3" onclick="$('#p3book').show();">Need More Info?</a></dd>
+                    <dd class="book"><a href="#p3_panel2-4" onclick="$('#p3book').hide();">Book Workshop</a></dd>
                 </dl>
                 <div class="clear"></div>
             </div>
@@ -220,6 +220,39 @@
                         </div></div>
                     </form>
                 </div>
+                <div class="content" id="p3_panel2-4">
+                    <form action="http://getsimpleform.com/messages?form_api_token=192fc241263c2c1114699bbb9c520414" method="post">
+                        <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+                        <input type='hidden' name='redirect_to' value='<the complete return url e.g. http://fooey.com/thank-you.html>' />
+                        <!-- all your input fields here.... -->
+                        <input name="Tour/Workshop" value="Photo and Film Workshop with Bowen Staines" type="hidden">
+
+                        <div class="row"> <div class="large-5 columns"> <label>Name <input type="text" placeholder="" name='name' /> </label> </div> </div>
+                        
+                        <div class="row"> <div class="large-5 columns"> <label>Email <input type="text" placeholder="" name='email' /> </label> </div> </div>
+
+                        <div class="row"> <div class="large-5 columns"> <label>Number of people <input type="number" name="number of people" value="1" min="1" max="18" size="3" style="width: auto;" /> </label> </div> </div>
+
+                        <div class="row"> <div class="large-5 columns"> <label>Select a date to book
+
+                        <select name="Date">
+                            <option>15-20 May 2014</option>
+                            <option>15-20 June 2014</option>
+                            <option>7-13 July 2014</option>
+                            <option>20-25 July 2014</option>
+                            <option>17-22 August 2014</option>
+                            <option>9-15 November 2014</option>
+                        </select>
+
+                        </label> </div> </div>
+
+                        <div class="row"> <div class="large-12 columns"> <label>Message (optional) <textarea placeholder="" name="message" rows="7" style="height: auto;"></textarea> </label> </div> </div>
+
+                        <div class="row"> <div class="large-12 columns"> 
+                        <input type='submit' value='Submit' />
+                        </div></div>
+                    </form>
+                </div>
             </div>
         </div>
         <div class="column small-12 medium-4 large-3">
@@ -272,8 +305,7 @@
     </div>
     <div class="row">
         <div class="column">
-            <a class="typeform-share link button expand" href="https://eventiceland.typeform.com/to/FqrpEd" data-mode="2" target="_blank" class="">Book Workshop</a>
-            <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
+            <a id="p3book" href="#p3_panel2-4" onclick="$($('#view_package .p3 .tabs dd a')[3]).click(); $(this).hide();" class="link button expand">Book Workshop</a>
         </div>
     </div>
 </div>

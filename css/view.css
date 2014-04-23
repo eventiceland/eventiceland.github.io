@@ -9,6 +9,10 @@
 	float: none !important;
 }
 
+#content .tabs-content {
+	margin-bottom: 0px;
+}
+
 #view_package .tabs:after {
 	clear: none !important;
 }
