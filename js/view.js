@@ -45,8 +45,7 @@ function showPack() {
 	$("#view_package").css("width", width);
 	$("#view_package").css("height", height);
 	$("#view_package").animate({width: "100%", height: offset3.top-headerHeight, top: offset2.top+10, left: 0}, {duration: 700, complete: function() {
-		$("#overlay").hide();
-		$("#overlay_icon").hide();
+		hideOverlay(true)
 		$(window).trigger("resize");
 		$(this).css("height", "auto");
 		$(this).css("min-height", $("#content").outerHeight()+"px");
@@ -78,10 +77,7 @@ $("#overlay_icon").click(function() {
 })
 
 $("#view_package .tabs dd a").click(function() {
-	setTimeout(function() {
-		var margin = Math.abs($("#view_package").outerHeight()-$("#content").outerHeight());
-		$("#footer").css("margin-top", margin+"px");
-	}, 10);
+	setFooterMargin();
 })
 
 //Overlay Code//
@@ -115,33 +111,53 @@ $("#view #cards img").mouseover(function() {
 	currentImg = this;
 	setOverlay(this);
 })
-$("#overlay").mouseout(function() {
-	var offset = $(this).offset();
+
+function hideOverlay(force) {
+	var offset = $("#overlay").offset();
 	var x1 = offset.left;
 	var y1 = offset.top;
-	var x2 = x1+$(this).width();
-	var y2 = y1+$(this).height();
+	var x2 = x1+$("#overlay").width();
+	var y2 = y1+$("#overlay").height();
 	var mouse = currentMousePos;
 
 	var boxIn = 40;
-	if (mouse.x < x1+boxIn || mouse.x > x2-boxIn || mouse.y < y1+boxIn || mouse.y > y2-boxIn) {
+	if (force || mouse.x < x1 || mouse.x > x2 || mouse.y < y1 || mouse.y > y2) {
 		currentImg = undefined;
 		$("#overlay").fadeOut("fast");
 		$("#overlay_icon").fadeOut("fast");
 	}
+}  
+
+$("#overlay").mouseout(function() {
+	hideOverlay()
 })
 $("#overlay_icon").hover(function() {
 	//
 }, function() {
 	//
 })
+
+function setFooterMargin() {
+	if ($("#view_package").is(":visible")) {
+		setTimeout(function() {
+			var margin = Math.abs($("#view_package").outerHeight()-$("#content").outerHeight());
+			$("#footer").css("margin-top", margin+"px");
+		}, 10);
+	}
+}
+
 $(window).resize(function() {
 	if (currentImg != undefined) {
 		setOverlay(currentImg);
 	}
+	setFooterMargin();
 })
 var currentMousePos = { x: -1, y: -1 };
 $(document).mousemove(function(event) {
     currentMousePos.x = event.pageX;
     currentMousePos.y = event.pageY;
+
+	if ($("#overlay").is(":visible")) {
+		hideOverlay()
+	}
 });

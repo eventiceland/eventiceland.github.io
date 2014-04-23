@@ -113,18 +113,17 @@ $(document).ready(function() {
 });
 
 function owlPlay() {
-	console.log("play1")
-	if (doOwl) {
-		console.log("play2")
+	var scrolled = $(document).scrollTop();
+	var mpos = $("#message").position().top;
+	console.log(scrolled, mpos)
+	if (doOwl && scrolled < mpos-20) {
 		var last = $($('#owl-demo .item')[$('#owl-demo .item').length-1]);
 		if (last.hasClass("active")) {
-			console.log("active");
 			change = false;
 			owl.next()
 			setImg($($('#owl-demo .item')[0]));
 			change = true;
 		} else if (window.innerWidth > last.offset().left+20) {
-			console.log("active2");
 			var next = false;
 			var more = true;
 			if (change) {
@@ -144,7 +143,6 @@ function owlPlay() {
 			}
 			more = true;
 		} else {
-			console.log("active3")
 			owl.next();
 		}
 	}

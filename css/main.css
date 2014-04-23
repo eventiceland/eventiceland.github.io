@@ -144,7 +144,9 @@ body {
     border-left: 1px solid #909090;
 }
 
-
+.clear {
+    clear: both;
+}
 
 
 

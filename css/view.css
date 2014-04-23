@@ -5,7 +5,7 @@
 .content {
 	line-height: 1.5;
 	margin-bottom: 10px;
-	margin-top: 55px;
+	margin-top: 0px;
 	float: none !important;
 }
 
@@ -36,7 +36,7 @@ ul.infobox {
 	margin: 0px;
 	color: #a3aaba;
 	margin-left: 0px;
-	margin-bottom: 0px;
+	margin-bottom: 24px;
 	font-size: 0.9em;
 	background-color: rgba(17, 19, 22, 0.6);
 	-webkit-border-radius: 3px;
