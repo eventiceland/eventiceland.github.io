@@ -22,7 +22,6 @@ function onScroll (evt) {
 	  requestAnimFrame(parallax);
 	  lastScrollY = win.scrollY;
 	}
-	console.log($(document).scrollTop(), nav_in_top);
 	if ($(document).scrollTop() > 100 && nav_in_top) {
 		console.log("in1")
 		nav_in_top = false;
@@ -35,6 +34,7 @@ function onScroll (evt) {
 		$("#top_nav").transition({top: 45}, 500);
 		$("#nav_bg").transition({opacity: 0}, 500);
 		$("#logo").transition({opacity: 0}, 500);
+		down()
 	}
 }
 onScroll();
@@ -61,6 +61,7 @@ function parallax(){
 		}
 		$('#text_overlay').css('opacity', opacity);
 		$('#header_message').css('opacity', opacity);
+		$('#down').css('opacity', opacity);
   }
   ticking = false;
 }
@@ -230,3 +231,16 @@ while (x != 5) {
 	x++;
 }
 preload(imgs);
+
+var opacity = 0.15;
+var speed = 2000;
+function down() {
+	if ($(document).scrollTop() < 100) {
+		$("#down").transition({opacity: opacity, complete: function() {
+			if (opacity == 0.15) { opacity = 1.0; speed = 1000; }
+			else { opacity = 0.15; speed = 2000; }
+			down();
+		}}, speed)
+	}
+}
+down();
