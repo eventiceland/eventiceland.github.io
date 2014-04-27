@@ -3,11 +3,14 @@
 <script>window.jQuery || document.write('<script src="/bower_components/jquery/jquery.min.js"><\/script>')</script>
 
 <!--bower-->
+<script src="/bower_components/pace/pace.min.js"></script>
+
+<script src="/bower_components/jquery.transit/jquery.transit.js"></script>
+
 <script type='text/javascript' src="/bower_components/foundation/js/foundation.min.js"></script>
 <script type='text/javascript' src="/bower_components/foundation/js/foundation/foundation.orbit.js"></script>
 <script type='text/javascript' src="/bower_components/foundation/js/foundation/foundation.equalizer.js"></script>
 
-<script src="/bower_components/pace/pace.min.js"></script>
 <script src="/bower_components/owlcarousel/owl-carousel/owl.carousel.min.js"></script>
 <!--endbower-->
 
@@ -39,11 +42,12 @@ $(document).ready(function() {
     })
     function headerSize() {
 
-        $("#text_overlay h1").css("font-size", $(window).width()/15+"px");
-        $("#text_overlay h2").css("font-size", $(window).width()/37+"px");
-        $("#text_overlay h2").css("padding-top", $(window).width()/13+"px");
+        $("#text_overlay #logo2").css("height", $(window).width()/11+"px");
+        $("#text_overlay h1").css("font-size", $(window).width()/18+"px");
+        $("#text_overlay h2").css("font-size", $(window).width()/40+"px");
 
-        console.log($(window).width()/13)
+        $("#header_message h1").css("font-size", $(window).width()/15+"px");
+        $("#header_message h2").css("font-size", $(window).width()/37+"px");
     }
     headerSize()
     $(window).on("resize", function() {

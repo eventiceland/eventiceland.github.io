@@ -15,17 +15,33 @@ window.requestAnimFrame = (function(){
 var win = window;
 var ticking = false;
 win.addEventListener('scroll', onScroll, false);
+var nav_in_top = true;
 function onScroll (evt) {
 	if (!ticking) {
 	  ticking = true;
 	  requestAnimFrame(parallax);
 	  lastScrollY = win.scrollY;
 	}
+	console.log($(document).scrollTop(), nav_in_top);
+	if ($(document).scrollTop() > 100 && nav_in_top) {
+		console.log("in1")
+		nav_in_top = false;
+		$("#top_nav").transition({top: 20}, 500);
+		$("#nav_bg").transition({opacity: 0.7}, 500);
+		$("#logo").transition({opacity: 1.0}, 500);
+	} else if ($(document).scrollTop() < 100 && nav_in_top == false) {
+		console.log("in2")
+		nav_in_top = true;
+		$("#top_nav").transition({top: 45}, 500);
+		$("#nav_bg").transition({opacity: 0}, 500);
+		$("#logo").transition({opacity: 0}, 500);
+	}
 }
+onScroll();
 
 function parallax(){
   var scrolled = $(document).scrollTop();
-  var mpos = $("#message").position().top;
+  var mpos = $("#view").position().top;
   if (scrolled < mpos) {
   		if (fade != undefined) fade.stop();
   		//console.log("innnnnn3")
@@ -43,6 +59,8 @@ function parallax(){
 			$('#header1').css('opacity', opacity);
 			//$('#header2').css('opacity', opacity);
 		}
+		$('#text_overlay').css('opacity', opacity);
+		$('#header_message').css('opacity', opacity);
   }
   ticking = false;
 }
@@ -113,7 +131,7 @@ $(document).ready(function() {
 });
 
 function owlPlay() {
-	var scrolled = $(document).scrollTop();
+	/*var scrolled = $(document).scrollTop();
 	var mpos = $("#message").position().top;
 	console.log(scrolled, mpos)
 	if (doOwl && scrolled < mpos-20) {
@@ -145,7 +163,7 @@ function owlPlay() {
 		} else {
 			owl.next();
 		}
-	}
+	}*/
 }
 
 var doOwl = true;
@@ -183,7 +201,7 @@ function setImg(that) {
 	$("#"+select).addClass("hcover");
 
 	var scrolled = $(document).scrollTop();
-	var mpos = $("#message").position().top;
+	var mpos = $("#view").position().top;
 	var opacity = parseFloat(1-scrolled*(1/mpos)).toFixed(3);
 	//opacity = 1.0
 	if (select == "header2") {

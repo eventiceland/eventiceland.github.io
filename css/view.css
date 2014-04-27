@@ -176,7 +176,13 @@ ul.infobox li ul.value_list li {
 	to {background: rgba(27, 31, 35, 0.95);opacity:1}
 }
 
+#view_package .orbit-container {
+
+}
+
 #view {
+	padding-top: 40px;
+	padding-bottom: 40px;
 	color: #1f2228 !important;
 	background-color: #DADADA; /* or #FFFFFF */
 }
