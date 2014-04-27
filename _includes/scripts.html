@@ -40,6 +40,9 @@ $(document).ready(function() {
     $(window).load(function() {
         $(document).foundation();
     })
+    setInterval(function() {
+        $(window).resize();
+    }, 2000)
     function headerSize() {
 
         $("#text_overlay #logo2").css("height", $(window).width()/11+"px");
