@@ -181,8 +181,8 @@ ul.infobox li ul.value_list li {
 }
 
 #view {
-	padding-top: 40px;
-	padding-bottom: 40px;
+	padding-top: 80px;
+	padding-bottom: 80px;
 	color: #1f2228 !important;
 	background-color: #DADADA; /* or #FFFFFF */
 }

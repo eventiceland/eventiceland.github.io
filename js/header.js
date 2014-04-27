@@ -244,3 +244,8 @@ function down() {
 	}
 }
 down();
+
+$("#down").click(function() {
+	var offset = $("#view").offset();
+	$('body,html').animate({scrollTop: offset.top}, 700);
+})
