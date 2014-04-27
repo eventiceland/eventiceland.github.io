@@ -66,7 +66,7 @@ function showPack() {
 		$("#footer").css("margin-top", margin+"px");
 		//$("#view").css("height", $(this).height()-$("#message").height());
 	}});*/
-	$('body,html').animate({scrollTop: offset2.top}, 700);
+	$('body,html').animate({scrollTop: offset2.top-65}, 700);
 	$("#close_pack").click(function() {
 		currentImg = undefined;
 		$("#view_package").fadeOut("slow", function() {

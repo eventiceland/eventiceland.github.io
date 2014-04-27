@@ -247,5 +247,5 @@ down();
 
 $("#down").click(function() {
 	var offset = $("#view").offset();
-	$('body,html').animate({scrollTop: offset.top}, 700);
+	$('body,html').animate({scrollTop: offset.top-65}, 700);
 })

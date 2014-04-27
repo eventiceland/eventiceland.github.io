@@ -50,8 +50,8 @@
 
 #text_overlay {
 	position: absolute;
-	top: 0;
-	left: 32px;
+	top: 1%;
+	left: 3.2%;
 	height: 50%;
 	text-align: left;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
@@ -108,7 +108,7 @@
 	position: fixed;
 	top: 0px;
 	right: 0px;
-	background-color: #000000;
+	background-color: #1f2228;
 	height: 65px;
 	width: 100%;
 	z-index: 5;
