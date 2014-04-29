@@ -18,11 +18,11 @@
 	cursor: pointer;
 }
 
-.hitem0 { background: url(/img/header/header2.jpg); }
-.hitem1 { background: url(/img/header/header2.jpg); }
-.hitem2 { background: url(/img/header/header2.jpg); }
-.hitem3 { background: url(/img/header/header2.jpg); }
-.hitem4 { background: url(/img/header/header2.jpg); }
+.hitem0 { background: url(/img/header/header3.jpg); }
+.hitem1 { background: url(/img/header/header3.jpg); }
+.hitem2 { background: url(/img/header/header3.jpg); }
+.hitem3 { background: url(/img/header/header3.jpg); }
+.hitem4 { background: url(/img/header/header3.jpg); }
 
 #header1, #header2 {
 	position: absolute;
